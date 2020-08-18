@@ -1,3 +1,4 @@
+
 import cuid from 'cuid';
 
 const validateName = function (name) {
