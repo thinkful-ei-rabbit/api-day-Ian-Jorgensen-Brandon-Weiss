@@ -10,10 +10,20 @@ import api from './api';
 api.getItems()
 .then(res => console.log(res));
 
-console.log(api.BASE_URL);
 
 
 const main = function () {
+
+  api.createItem('pears')
+  .then(res => res.json())
+  .then((newItem) => {
+    return api.getItems();
+  })
+  .then(res => res.json())
+  .then((items) => {
+    console.log(items);
+  });
+
   shoppingList.bindEventListeners();
   shoppingList.render();
 };
